@@ -131,143 +131,27 @@ const TROUBLE_BONUS: Record<Trouble, Partial<Record<JamType, number>>> = {
 };
 
 const CORE_QUESTIONS: Question[] = [
-  {
-    id: "q1",
-    title: "始める前に、どっちが近い？",
-    subtitle: "着手のクセ",
-    a: { label: "全体像が見えるまで動けない", score: { OVERTHINK: 2, INFO: 1 } },
-    b: { label: "とりあえず触ってみる", score: {} },
-  },
-  {
-    id: "q2",
-    title: "止まる瞬間は？",
-    subtitle: "詰まりの形",
-    a: { label: "もっと良い方法がある気がして迷う", score: { OVERTHINK: 2, INFO: 1, PRIORITY: 1 } },
-    b: { label: "完璧にできないなら出したくない", score: { PERFECT: 3 } },
-  },
-  {
-    id: "q3",
-    title: "タスクが増えると？",
-    subtitle: "整理のクセ",
-    a: { label: "優先順位が決まらず散らばる", score: { PRIORITY: 3, OVERTHINK: 1 } },
-    b: { label: "まず全部を把握しようとして疲れる", score: { INFO: 2, ENERGY: 1 } },
-  },
-  {
-    id: "q4",
-    title: "集中が切れる要因は？",
-    subtitle: "集中環境",
-    a: { label: "通知や別用事で頻繁に途切れる", score: { DISTRACT: 3, TIME: 1 } },
-    b: { label: "疲れで頭が回らなくなる", score: { ENERGY: 3 } },
-  },
-  {
-    id: "q5",
-    title: "時間の取り方は？",
-    subtitle: "時間設計",
-    a: { label: "まとまった時間がないと進まない", score: { TIME: 3, OVERTHINK: 1 } },
-    b: { label: "短時間でも積み上げられる", score: {} },
-  },
-  {
-    id: "q6",
-    title: "学び直しで多いのは？",
-    subtitle: "学び方のクセ",
-    a: { label: "情報を集めるほど不安が増える", score: { INFO: 3, OVERTHINK: 1 } },
-    b: { label: "やる気の波が大きく続かない", score: { MOTIVATION: 3, ENERGY: 1 } },
-  },
-  {
-    id: "q7",
-    title: "提出・公開のときは？",
-    subtitle: "アウトプット",
-    a: { label: "60点でも出して改善したい", score: {} },
-    b: { label: "出すなら納得できる完成度で", score: { PERFECT: 3, OVERTHINK: 1 } },
-  },
-  {
-    id: "q8",
-    title: "決めるときは？",
-    subtitle: "判断スタイル",
-    a: { label: "比較して最適解を探したい", score: { OVERTHINK: 2, INFO: 1 } },
-    b: { label: "仮決めして試しながら調整したい", score: {} },
-  },
-  {
-    id: "q9",
-    title: "作業のやり直しは？",
-    subtitle: "手戻り",
-    a: { label: "最初からしっかり設計して減らしたい", score: { OVERTHINK: 1, PERFECT: 1 } },
-    b: { label: "まず出してから直していく", score: {} },
-  },
-  {
-    id: "q10",
-    title: "忙しい日の自分は？",
-    subtitle: "現実の状態",
-    a: { label: "やる気はあるのに進まない", score: { OVERTHINK: 1, PRIORITY: 1, TIME: 1 } },
-    b: { label: "気力がなくて動けない", score: { ENERGY: 2, MOTIVATION: 1 } },
-  },
+  { id: "q1", title: "始める前に、どっちが近い？", subtitle: "着手のクセ", a: { label: "全体像が見えるまで動けない", score: { OVERTHINK: 2, INFO: 1 } }, b: { label: "とりあえず触ってみる", score: {} } },
+  { id: "q2", title: "止まる瞬間は？", subtitle: "詰まりの形", a: { label: "もっと良い方法がある気がして迷う", score: { OVERTHINK: 2, INFO: 1, PRIORITY: 1 } }, b: { label: "完璧にできないなら出したくない", score: { PERFECT: 3 } } },
+  { id: "q3", title: "タスクが増えると？", subtitle: "整理のクセ", a: { label: "優先順位が決まらず散らばる", score: { PRIORITY: 3, OVERTHINK: 1 } }, b: { label: "まず全部を把握しようとして疲れる", score: { INFO: 2, ENERGY: 1 } } },
+  { id: "q4", title: "集中が切れる要因は？", subtitle: "集中環境", a: { label: "通知や別用事で頻繁に途切れる", score: { DISTRACT: 3, TIME: 1 } }, b: { label: "疲れで頭が回らなくなる", score: { ENERGY: 3 } } },
+  { id: "q5", title: "時間の取り方は？", subtitle: "時間設計", a: { label: "まとまった時間がないと進まない", score: { TIME: 3, OVERTHINK: 1 } }, b: { label: "短時間でも積み上げられる", score: {} } },
+  { id: "q6", title: "学び直しで多いのは？", subtitle: "学び方のクセ", a: { label: "情報を集めるほど不安が増える", score: { INFO: 3, OVERTHINK: 1 } }, b: { label: "やる気の波が大きく続かない", score: { MOTIVATION: 3, ENERGY: 1 } } },
+  { id: "q7", title: "提出・公開のときは？", subtitle: "アウトプット", a: { label: "60点でも出して改善したい", score: {} }, b: { label: "出すなら納得できる完成度で", score: { PERFECT: 3, OVERTHINK: 1 } } },
+  { id: "q8", title: "決めるときは？", subtitle: "判断スタイル", a: { label: "比較して最適解を探したい", score: { OVERTHINK: 2, INFO: 1 } }, b: { label: "仮決めして試しながら調整したい", score: {} } },
+  { id: "q9", title: "作業のやり直しは？", subtitle: "手戻り", a: { label: "最初からしっかり設計して減らしたい", score: { OVERTHINK: 1, PERFECT: 1 } }, b: { label: "まず出してから直していく", score: {} } },
+  { id: "q10", title: "忙しい日の自分は？", subtitle: "現実の状態", a: { label: "やる気はあるのに進まない", score: { OVERTHINK: 1, PRIORITY: 1, TIME: 1 } }, b: { label: "気力がなくて動けない", score: { ENERGY: 2, MOTIVATION: 1 } } },
 ];
 
 const EXTRA_POOL: Record<JamType, Question[]> = {
-  OVERTHINK: [
-    {
-      id: "ex_overthink_1",
-      title: "迷うとき、どっち？",
-      a: { label: "納得できる根拠が揃うまで止まる", score: { OVERTHINK: 3 } },
-      b: { label: "仮で決めて進められる", score: {} },
-    },
-  ],
-  PERFECT: [
-    {
-      id: "ex_perfect_1",
-      title: "品質の基準は？",
-      a: { label: "基準が高く、常に上を狙う", score: { PERFECT: 3 } },
-      b: { label: "用途に合わせて調整できる", score: {} },
-    },
-  ],
-  INFO: [
-    {
-      id: "ex_info_1",
-      title: "調べ物は？",
-      a: { label: "つい延長して時間が溶ける", score: { INFO: 3 } },
-      b: { label: "時間を区切って試せる", score: {} },
-    },
-  ],
-  PRIORITY: [
-    {
-      id: "ex_priority_1",
-      title: "ToDoが増えたら？",
-      a: { label: "全部が同じ重要度に見える", score: { PRIORITY: 3 } },
-      b: { label: "トップ1つに絞れる", score: {} },
-    },
-  ],
-  ENERGY: [
-    {
-      id: "ex_energy_1",
-      title: "疲労のサインは？",
-      a: { label: "睡眠/回復が足りない自覚がある", score: { ENERGY: 3 } },
-      b: { label: "疲れてても何とか押し切れる", score: {} },
-    },
-  ],
-  TIME: [
-    {
-      id: "ex_time_1",
-      title: "中断は？",
-      a: { label: "中断が多く再開に時間がかかる", score: { TIME: 3 } },
-      b: { label: "中断してもすぐ戻れる", score: {} },
-    },
-  ],
-  DISTRACT: [
-    {
-      id: "ex_distract_1",
-      title: "環境は？",
-      a: { label: "スマホが近いとつい触る", score: { DISTRACT: 3 } },
-      b: { label: "通知があっても流せる", score: {} },
-    },
-  ],
-  MOTIVATION: [
-    {
-      id: "ex_motivation_1",
-      title: "続かない理由は？",
-      a: { label: "意味や手応えが見えず止まる", score: { MOTIVATION: 3 } },
-      b: { label: "決めたら継続できる方", score: {} },
-    },
-  ],
+  OVERTHINK: [{ id: "ex_overthink_1", title: "迷うとき、どっち？", a: { label: "納得できる根拠が揃うまで止まる", score: { OVERTHINK: 3 } }, b: { label: "仮で決めて進められる", score: {} } }],
+  PERFECT: [{ id: "ex_perfect_1", title: "品質の基準は？", a: { label: "基準が高く、常に上を狙う", score: { PERFECT: 3 } }, b: { label: "用途に合わせて調整できる", score: {} } }],
+  INFO: [{ id: "ex_info_1", title: "調べ物は？", a: { label: "つい延長して時間が溶ける", score: { INFO: 3 } }, b: { label: "時間を区切って試せる", score: {} } }],
+  PRIORITY: [{ id: "ex_priority_1", title: "ToDoが増えたら？", a: { label: "全部が同じ重要度に見える", score: { PRIORITY: 3 } }, b: { label: "トップ1つに絞れる", score: {} } }],
+  ENERGY: [{ id: "ex_energy_1", title: "疲労のサインは？", a: { label: "睡眠/回復が足りない自覚がある", score: { ENERGY: 3 } }, b: { label: "疲れてても何とか押し切れる", score: {} } }],
+  TIME: [{ id: "ex_time_1", title: "中断は？", a: { label: "中断が多く再開に時間がかかる", score: { TIME: 3 } }, b: { label: "中断してもすぐ戻れる", score: {} } }],
+  DISTRACT: [{ id: "ex_distract_1", title: "環境は？", a: { label: "スマホが近いとつい触る", score: { DISTRACT: 3 } }, b: { label: "通知があっても流せる", score: {} } }],
+  MOTIVATION: [{ id: "ex_motivation_1", title: "続かない理由は？", a: { label: "意味や手応えが見えず止まる", score: { MOTIVATION: 3 } }, b: { label: "決めたら継続できる方", score: {} } }],
 };
 
 type TimeBucket = "0_15" | "30" | "60";
@@ -285,16 +169,7 @@ function addScore(base: Record<JamType, number>, delta: Partial<Record<JamType, 
   return next;
 }
 function initScores(): Record<JamType, number> {
-  return {
-    OVERTHINK: 0,
-    PERFECT: 0,
-    INFO: 0,
-    PRIORITY: 0,
-    ENERGY: 0,
-    TIME: 0,
-    DISTRACT: 0,
-    MOTIVATION: 0,
-  };
+  return { OVERTHINK: 0, PERFECT: 0, INFO: 0, PRIORITY: 0, ENERGY: 0, TIME: 0, DISTRACT: 0, MOTIVATION: 0 };
 }
 function topTwo(scores: Record<JamType, number>) {
   const sorted = (Object.keys(scores) as JamType[])
@@ -387,11 +262,7 @@ export default function Page() {
       TIRED: "疲れて動けない",
       NO_TIME: "時間がない",
     };
-    const timeLabel: Record<TimeBucket, string> = {
-      "0_15": "0〜15分",
-      "30": "30分くらい",
-      "60": "1時間以上",
-    };
+    const timeLabel: Record<TimeBucket, string> = { "0_15": "0〜15分", "30": "30分くらい", "60": "1時間以上" };
 
     const prompt = `あなたは「会社員の学び直し設計所」のコーチです。
 私はAI×タイプ別「最短改善」で、いま詰まっている原因を言語化し、制約（時間/体力/家庭）前提で今日からの行動を3つに絞ってください。
@@ -640,16 +511,20 @@ export default function Page() {
                     ["今日", resultText.meta.doToday],
                     ["今週", resultText.meta.doWeek],
                     ["今月", resultText.meta.doMonth],
-                  ].map(([label, items]) => (
-                    <div key={label} style={{ border: "1px solid #e5e7eb", borderRadius: 12, padding: 12 }}>
-                      <div style={{ fontWeight: 900 }}>{label}</div>
-                      <ul style={{ marginTop: 6, lineHeight: 1.8 }}>
-                        {(items as string[]).map((x, i) => (
-                          <li key={i}>{x}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+                  ].map(([label, items], idx) => {
+                    const labelText = Array.isArray(label) ? label.join("") : String(label);
+
+                    return (
+                      <div key={`${labelText}-${idx}`} style={{ border: "1px solid #e5e7eb", borderRadius: 12, padding: 12 }}>
+                        <div style={{ fontWeight: 900 }}>{labelText}</div>
+                        <ul style={{ marginTop: 6, lineHeight: 1.8 }}>
+                          {(items as string[]).map((x, i) => (
+                            <li key={`${labelText}-${idx}-${i}`}>{x}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
